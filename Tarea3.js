@@ -35,9 +35,9 @@ function conection(status) {
     if (status == 1) {
         return "Online";
     } else if (status == 2) {
-        return "Not allowed";
+        return "Away";
     } else {
-        return "offline";
+        return "Offline";
     }
 }
 
@@ -112,7 +112,7 @@ function esEntero(numero) {
     // De lo contrario, devuelve "false"
     // Pista: Puedes resolver esto usando `Math.floor`
     // Tu código:
-    if ((numero % numero) == 0) {
+    if ((numero % 1) == 0 || numero == 0) {
         return true;
     } else {
         return false;
@@ -124,12 +124,12 @@ function fizzBuzz(numero) {
     // Si "numero" es divisible entre 5, devuelve "buzz"
     // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
     // De lo contrario, devuelve el numero
-    if ((numero % 3) == 0) {
+    if (((numero % 3) == 0) && ((numero % 5) == 0)) {
+        return "fizzbuzz";
+    }else if ((numero % 3) == 0) {
         return "fizz";
     } else if ((numero % 5) == 0) {
         return "buzz";
-    } else if (((numero % 3) == 0) && ((numero % 5) == 0)) {
-        return "fizzbuzz";
     } else { return numero; }
 }
 
@@ -141,16 +141,16 @@ function operadoresLogicos(num1, num2, num3) {
     //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
     //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
     //Tu código:
-    if (num1 > num2 && num1 > num3) { 
-        return "Numero 1 es mayor y positivo.";
-    }else if (num1 < 0 || num2 < 0 || num3 < 0){
+    if (num1 < 0 || num2 < 0 || num3 < 0){
         return "Hay negativos";
-    }else if (num3 > num2 && num3 > num1) {
-        return num3++;
-    }else if (num1 == 0 || num2 == 0 || num3 == 0) {
+    }else if (num1 > num2 && num1 > num3) { 
+        return "Número 1 es mayor y positivo";
+    } else if (num1 == 0 || num2 == 0 || num3 == 0) {
         return "Error";
+    }else if (num3 > num2 && num3 > num1) {
+        return ++num3;
     } else {
-        return 0;
+        return false;
     }
 }
 
